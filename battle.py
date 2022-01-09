@@ -215,6 +215,9 @@ def init_submit_count(submits, all_datas_map):
 
 def collect_new_datas(all_datas_map, submit_count, args):
     counts = np.array(list(submit_count.values()))
+    for index, c in enumerate(list(counts)):
+        if c < 5:
+            counts[index] = -c * 100
     counts = np.max(counts) + 10 - counts
     proba = counts / np.sum(counts)
     p = {k: proba[index] for index, k in enumerate(submit_count.keys())}
@@ -324,6 +327,7 @@ def rank(submit_rating, all_datas_map, env, json_files_set, submit_count):
     if len(submit_rating_vec) > 0:
         table_txt = "# Scores\n\n"
         table_txt += f'Modified Time: {time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())}\n\n'
+        table_txt += f"Submit Num: {len(submit_rating_vec)}\n\n"
 
         for r, sv in enumerate(submit_rating_vec):
             sv.insert(0, r + 1)
