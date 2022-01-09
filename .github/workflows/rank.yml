@@ -49,7 +49,7 @@ jobs:
 
       - name: Run Battle
         run: |
-          python3 battle.py --each-battle-size 4 --battle-count 1 --max-workers 4 --save-result README.md
+          python3 battle.py --each-battle-size 4 --battle-count 1 --max-workers 4 --save-result README.md-bak
 
       #      - name: Save Result
       #        run: |
@@ -64,7 +64,6 @@ jobs:
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          mv README.md README.md-bak
           git add .
           git stash
           git pull --rebase
