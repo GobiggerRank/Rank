@@ -217,7 +217,7 @@ def collect_new_datas(all_datas_map, submit_count, args):
     counts = np.array(list(submit_count.values()))
     for index, c in enumerate(list(counts)):
         if c < 5:
-            counts[index] = -c * 100
+            counts[index] = -(5 - c) * 100
     counts = np.max(counts) + 10 - counts
     proba = counts / np.sum(counts)
     p = {k: proba[index] for index, k in enumerate(submit_count.keys())}
