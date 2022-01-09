@@ -319,7 +319,7 @@ def rank(submit_rating, all_datas_map, env, json_files_set, submit_count):
     submit_rating_vec = []
     args = get_args()
     for s, r in submit_rating.items():
-        submit_rating_vec.append([s.strip(args.submit_folder.replace("/", ".") + "."), r.mu, r.sigma, submit_count[s]])
+        submit_rating_vec.append([s[len((args.submit_folder.replace("/", ".") + ".")):], r.mu, r.sigma, submit_count[s]])
     submit_rating_vec.sort(key=lambda x: x[1], reverse=True)
     p_str = ""
     for index, s in enumerate(submit_rating_vec):
