@@ -23,7 +23,7 @@ jobs:
         with:
           python-version: 3.8
 
-      - name : Cache Pip
+      - name: Cache Pip
         id: cache-pip
         uses: actions/cache@v2
         with:
@@ -32,19 +32,19 @@ jobs:
           restore-keys: ${{ runner.os }}-pip-
 
       - name: Pip Install
-#        if: steps.cache-pip.outputs.cache-hit != 'true'
+        # if: steps.cache-pip.outputs.cache-hit != 'true'
         run: |
           python3 -m pip install --upgrade pip
           python3 -m pip install -r GoBiggerSubmit/requirements.txt
 
-      - name : Cache rank.tmp
+      - name: Cache rank.tmp
         uses: actions/cache@v2
         with:
           path: rank.tmp
           key: ${{ runner.os }}-rank-tmp
 
       - name: Run Battle
-        run : | 
+        run: |
           python3 battle.py --each-battle-size 4 --battle-count 1 --max-workers 4 --save-result README.md
 
       - name: Save Result
