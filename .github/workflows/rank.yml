@@ -19,8 +19,8 @@ jobs:
 
       - name: ls
         run: |
-          ll
-          ll GoBiggerSubmit
+          ls -alh
+          ls -alh GoBiggerSubmit
 
 #      - name: Set up Python 3.8
 #        uses: actions/setup-python@v2
