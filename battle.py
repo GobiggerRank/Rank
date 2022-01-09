@@ -288,7 +288,7 @@ def show_table(records, fields, headings, alignment=None):
     return ret
 
 
-def rank(submit_rating, all_datas_map, env, json_files_set):
+def rank(submit_rating, all_datas_map, env, json_files_set, submit_count):
     start_time = time.time()
     for json_file in all_datas_map:
         if json_file in json_files_set:
@@ -316,19 +316,19 @@ def rank(submit_rating, all_datas_map, env, json_files_set):
     submit_rating_vec = []
     args = get_args()
     for s, r in submit_rating.items():
-        submit_rating_vec.append([s.strip(args.submit_folder.replace("/", ".") + "."), r.mu, r.sigma])
+        submit_rating_vec.append([s.strip(args.submit_folder.replace("/", ".") + "."), r.mu, r.sigma, submit_count[s]])
     submit_rating_vec.sort(key=lambda x: x[1], reverse=True)
     p_str = ""
     for index, s in enumerate(submit_rating_vec):
-        p_str += f"{index}: {s[0]} {s[1]:.3f} {s[2]:.3f}\n"
+        p_str += f"{index + 1}: {s[0]} {s[1]:.3f} {s[2]:.3f}\n"
     if len(submit_rating_vec) > 0:
         table_txt = "# Scores\n\n"
         table_txt += f'Modified Time: {time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())}\n\n'
 
         for r, sv in enumerate(submit_rating_vec):
-            sv.insert(0, r)
+            sv.insert(0, r + 1)
         table_txt += show_table(submit_rating_vec, list(range(len(submit_rating_vec[0]))),
-                                ["rank", "submit", "score", "sigma"])
+                                ["rank", "submit", "score", "sigma", "pk_num"])
         if len(args.save_result) > 0:
             with open(args.save_result, "w") as f:
                 f.write(table_txt)
@@ -364,14 +364,14 @@ def main(args=get_args()):
         del submit_rating[submit]
 
     if args.rank:
-        rank(submit_rating, all_datas_map, env, json_files_set)
+        rank(submit_rating, all_datas_map, env, json_files_set, submit_count)
         save_rank(submit_rating, json_files_set)
 
     if args.battle:
         for _ in range(args.battle_count):
             datas_map = collect_new_datas(all_datas_map, submit_count, args)
             if args.rank:
-                rank(submit_rating, datas_map, env, json_files_set)
+                rank(submit_rating, datas_map, env, json_files_set, submit_count)
                 save_rank(submit_rating, json_files_set)
 
 
