@@ -1,7 +1,12 @@
 name: Rank
 
-on: [ push ]
-
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    - cron: '*/20 * * * *'
 
 jobs:
   rank:
@@ -50,15 +55,6 @@ jobs:
       - name: Run Battle
         run: |
           python3 battle.py --each-battle-size 4 --battle-count 1 --max-workers 4 --save-result README.md-bak
-
-      #      - name: Save Result
-      #        run: |
-      #          git config user.name github-actions
-      #          git config user.email github-actions@github.com
-      #          git add .
-      #          git commit -m "auto upload"
-      #          git pull --rebase
-      #          git push
 
       - name: Save Result
         run: |
