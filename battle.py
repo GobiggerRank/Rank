@@ -29,7 +29,7 @@ def get_args():
     parser.add_argument('--submit-folder', type=str, default="GoBiggerSubmit/submit")
     parser.add_argument('--each-battle-size', type=int, default=20)
     parser.add_argument('--battle-count', type=int, default=30)
-    parser.add_argument('--use-single-thread', default=True, action='store_true')
+    parser.add_argument('--use-single-thread', default=False, action='store_true')
     parser.add_argument('--max-workers', type=int, default=4)
     args = parser.parse_known_args()[0]
     return args
