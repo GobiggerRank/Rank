@@ -239,6 +239,55 @@ def collect_new_datas(all_datas_map, submit_count, args):
     return {data_file: datas}
 
 
+def show_table(records, fields, headings, alignment=None):
+    left_rule = {'<': ':', '^': ':', '>': '-'}
+    right_rule = {'<': '-', '^': ':', '>': ':'}
+
+    def evaluate_field(record, field_spec):
+        if type(field_spec) is int:
+            return str(record[field_spec])
+        elif type(field_spec) is str:
+            return str(getattr(record, field_spec))
+        else:
+            return str(field_spec(record))
+
+    num_columns = len(fields)
+    assert len(headings) == num_columns
+
+    # Compute the table cell data
+    columns = [[] for _ in range(num_columns)]
+    for record in records:
+        for i, field in enumerate(fields):
+            columns[i].append(evaluate_field(record, field))
+
+    extended_align = alignment if alignment is not None else []
+    if len(extended_align) > num_columns:
+        extended_align = extended_align[0:num_columns]
+    elif len(extended_align) < num_columns:
+        extended_align += [('^', '<') for _ in range(num_columns - len(extended_align))]
+
+    heading_align, cell_align = [x for x in zip(*extended_align)]
+
+    field_widths = [len(max(column, key=len)) if len(column) > 0 else 0 for column in columns]
+    heading_widths = [max(len(head), 2) for head in headings]
+    column_widths = [max(x) for x in zip(field_widths, heading_widths)]
+
+    _ = ' | '.join(['{:' + a + str(w) + '}' for a, w in zip(heading_align, column_widths)])
+    heading_template = '| ' + _ + ' |'
+    _ = ' | '.join(['{:' + a + str(w) + '}' for a, w in zip(cell_align, column_widths)])
+    row_template = '| ' + _ + ' |'
+
+    _ = ' | '.join([left_rule[a] + '-' * (w - 2) + right_rule[a] for a, w in zip(cell_align, column_widths)])
+    ruling = '| ' + _ + ' |'
+
+    ret = ""
+    ret += heading_template.format(*headings).rstrip() + '\n'
+    ret += ruling.rstrip() + '\n'
+    for row in zip(*columns):
+        ret += row_template.format(*row).rstrip() + '\n'
+    return ret
+
+
 def rank(submit_rating, all_datas_map, env, json_files_set):
     start_time = time.time()
     for json_file in all_datas_map:
@@ -265,16 +314,19 @@ def rank(submit_rating, all_datas_map, env, json_files_set):
             submit_rating[data["submits"][2]] = r2
             submit_rating[data["submits"][3]] = r3
     submit_rating_vec = []
+    args = get_args()
     for s, r in submit_rating.items():
-        submit_rating_vec.append([s, r.mu, r.sigma])
+        submit_rating_vec.append([s.strip(args.submit_folder.replace("/", ".") + "."), r.mu, r.sigma])
     submit_rating_vec.sort(key=lambda x: x[1], reverse=True)
     p_str = ""
     for index, s in enumerate(submit_rating_vec):
         p_str += f"{index}: {s[0]} {s[1]:.3f} {s[2]:.3f}\n"
-    args = get_args()
-    if len(args.save_result) > 0:
-        with open(args.save_result, "w") as f:
-            f.write(p_str)
+    if len(submit_rating_vec) > 0:
+        table_txt = "# Scores\n\n"
+        table_txt += show_table(submit_rating_vec, list(range(len(submit_rating_vec[0]))), ["submit", "score", "sigma"])
+        if len(args.save_result) > 0:
+            with open(args.save_result, "w") as f:
+                f.write(table_txt)
     logging.info(f"rank cost: {int(1000 * (time.time() - start_time))}ms\n{p_str}\n")
 
 
