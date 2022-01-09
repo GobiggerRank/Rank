@@ -37,8 +37,12 @@ jobs:
           python3 -m pip install --upgrade pip
           python3 -m pip install -r GoBiggerSubmit/requirements.txt
 
-      - run: |
-          python3 battle --each-battle-size 10 -battle-count 1 --max-workers 2
+      - name: Run Battle
+        run : | 
+          python3 battle.py --each-battle-size 10 -battle-count 1 --max-workers 2 --save-result README.md
+
+      - name: Save Result
+        run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .

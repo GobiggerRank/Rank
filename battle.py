@@ -27,6 +27,7 @@ def get_args():
     parser.add_argument('--rank', default=True, action='store_true')
     parser.add_argument('--battle', default=True, action='store_true')
     parser.add_argument('--submit-folder', type=str, default="GoBiggerSubmit/submit")
+    parser.add_argument('--save-result', type=str, default="")
     parser.add_argument('--each-battle-size', type=int, default=20)
     parser.add_argument('--battle-count', type=int, default=30)
     parser.add_argument('--use-single-thread', default=False, action='store_true')
@@ -270,6 +271,10 @@ def rank(submit_rating, all_datas_map, env, json_files_set):
     p_str = ""
     for index, s in enumerate(submit_rating_vec):
         p_str += f"{index}: {s[0]} {s[1]:.3f} {s[2]:.3f}\n"
+    args = get_args()
+    if len(args.save_result) > 0:
+        with open(args.save_result, "w") as f:
+            f.write(p_str)
     logging.info(f"rank cost: {int(1000 * (time.time() - start_time))}ms\n{p_str}\n")
 
 
