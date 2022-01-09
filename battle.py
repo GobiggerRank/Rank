@@ -319,7 +319,8 @@ def rank(submit_rating, all_datas_map, env, json_files_set, submit_count):
     submit_rating_vec = []
     args = get_args()
     for s, r in submit_rating.items():
-        submit_rating_vec.append([s[len((args.submit_folder.replace("/", ".") + ".")):], r.mu, r.sigma, submit_count[s]])
+        submit_rating_vec.append(
+            [s[len((args.submit_folder.replace("/", ".") + ".")):], r.mu, r.sigma, submit_count[s]])
     submit_rating_vec.sort(key=lambda x: x[1], reverse=True)
     p_str = ""
     for index, s in enumerate(submit_rating_vec):
@@ -328,6 +329,7 @@ def rank(submit_rating, all_datas_map, env, json_files_set, submit_count):
         table_txt = "# Scores\n\n"
         table_txt += f'Modified Time: {time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())}\n\n'
         table_txt += f"Submit Num: {len(submit_rating_vec)}\n\n"
+        table_txt += f"All PK Num: {sum(submit_count.values())}\n\n"
 
         for r, sv in enumerate(submit_rating_vec):
             sv.insert(0, r + 1)
