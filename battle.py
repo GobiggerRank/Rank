@@ -323,6 +323,8 @@ def rank(submit_rating, all_datas_map, env, json_files_set):
         p_str += f"{index}: {s[0]} {s[1]:.3f} {s[2]:.3f}\n"
     if len(submit_rating_vec) > 0:
         table_txt = "# Scores\n\n"
+        table_txt += f'Modified Time: {time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())}\n\n'
+
         for r, sv in enumerate(submit_rating_vec):
             sv.insert(0, r)
         table_txt += show_table(submit_rating_vec, list(range(len(submit_rating_vec[0]))),

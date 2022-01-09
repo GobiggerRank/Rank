@@ -8,6 +8,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: szenius/set-timezone@v1.0
+        with:
+          timezoneLinux: "Asia/Shanghai"
+
       - name: Checkout Self
         uses: actions/checkout@v2
 
@@ -47,11 +51,25 @@ jobs:
         run: |
           python3 battle.py --each-battle-size 4 --battle-count 1 --max-workers 4 --save-result README.md
 
+      #      - name: Save Result
+      #        run: |
+      #          git config user.name github-actions
+      #          git config user.email github-actions@github.com
+      #          git add .
+      #          git commit -m "auto upload"
+      #          git pull --rebase
+      #          git push
+
       - name: Save Result
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
+          mv README.md README.md-bak
+          git add .
+          git stash
+          git pull --rebase
+          git stash apply stash@{0}
+          mv README.md-bak README.md
           git add .
           git commit -m "auto upload"
-          git pull --rebase
           git push
