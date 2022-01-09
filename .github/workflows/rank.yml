@@ -54,7 +54,7 @@ jobs:
 
       - name: Run Battle
         run: |
-          python3 battle.py --each-battle-size 20 --battle-count 1 --max-workers 4 --save-result README.md-bak
+          python3 battle.py --each-battle-size 2 --battle-count 1 --max-workers 4 --save-result README.md-bak
 
       - name: Save Result
         run: |
