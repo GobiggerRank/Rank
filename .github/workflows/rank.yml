@@ -32,7 +32,7 @@ jobs:
           restore-keys: ${{ runner.os }}-pip-
 
       - name: Pip Install
-        if: steps.cache-pip.outputs.cache-hit != 'true'
+#        if: steps.cache-pip.outputs.cache-hit != 'true'
         run: |
           python3 -m pip install --upgrade pip
           python3 -m pip install -r GoBiggerSubmit/requirements.txt
