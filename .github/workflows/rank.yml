@@ -16,6 +16,7 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
           repository: YangWuuu/GoBiggerSubmit
+          path: './GoBiggerSubmit'
 
       - name: ls
         run: |
