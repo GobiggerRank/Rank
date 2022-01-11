@@ -5,8 +5,8 @@ on:
     branches:
       - main
   workflow_dispatch:
-  schedule:
-    - cron: '*/5 * * * *'
+#  schedule:
+#    - cron: '*/5 * * * *'
 
 jobs:
   rank:
@@ -50,11 +50,11 @@ jobs:
         uses: actions/cache@v2
         with:
           path: rank.tmp
-          key: ${{ runner.os }}-rank-tmp
+          key: ${{ runner.os }}-rank-tmp-${{ secrets.RANK_VERSION }}
 
       - name: Run Battle
         run: |
-          python3 battle.py --each-battle-size 30 --battle-count 1 --max-workers 4 --save-result README.md-bak
+          python3 battle.py --battle --each-battle-size 20 --battle-count 1 --max-workers 4 --save-result README.md-bak
 
       - name: Save Result
         run: |

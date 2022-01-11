@@ -25,11 +25,11 @@ result_folder = Path("result")
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--rank', default=True, action='store_true')
-    parser.add_argument('--battle', default=True, action='store_true')
+    parser.add_argument('--battle', default=False, action='store_true')
     parser.add_argument('--submit-folder', type=str, default="GoBiggerSubmit/submit")
     parser.add_argument('--save-result', type=str, default="")
     parser.add_argument('--each-battle-size', type=int, default=20)
-    parser.add_argument('--battle-count', type=int, default=30)
+    parser.add_argument('--battle-count', type=int, default=1)
     parser.add_argument('--use-single-thread', default=False, action='store_true')
     parser.add_argument('--max-workers', type=int, default=4)
     args = parser.parse_known_args()[0]
@@ -56,6 +56,7 @@ def battle_single(submits: List[str], cfg, seed: int = 0):
     team_player_names = server.get_team_names()
     team_names = list(team_player_names.keys())
     args = get_args()
+    is_err = False
     for index, submit in enumerate(submits):
         try:
             p = importlib.import_module(f"{submit}.my_submission")
@@ -63,6 +64,7 @@ def battle_single(submits: List[str], cfg, seed: int = 0):
                                          player_names=team_player_names[team_names[index]]))
         except Exception as e:
             print(f"You must implement `MySubmission` in {submit} my_submission.py ! exception: {e}")
+            is_err = True
             # raise
 
     time_obs = 0
@@ -110,6 +112,7 @@ def battle_single(submits: List[str], cfg, seed: int = 0):
         scores = list(leaderboard.values())
     except Exception as e:
         scores = [0] * team_num
+        is_err = True
         print(f"battle error: {e}")
     s = sorted(range(len(scores)), key=scores.__getitem__, reverse=True)
 
@@ -124,6 +127,8 @@ def battle_single(submits: List[str], cfg, seed: int = 0):
         "time_actions": time_actions,
         "time_cost": time.time() - start_time,
     }
+    if is_err:
+        data["is_err"] = True
     return data
 
 
@@ -209,7 +214,7 @@ def init_submit_count(submits, all_datas_map):
                 if s not in submit_count:
                     continue
                 submit_count[s] += 1
-    logging.info(f"submit_count: {submit_count}")
+    # logging.info(f"submit_count: {submit_count}")
     return submit_count
 
 
@@ -329,16 +334,25 @@ def rank(submit_rating, all_datas_map, env, json_files_set, submit_count):
         table_txt = "# Scores\n\n"
         table_txt += f'Modified Time: {time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())}\n\n'
         table_txt += f"Submit Num: {len(submit_rating_vec)}\n\n"
-        table_txt += f"All PK Num: {sum(submit_count.values())}\n\n"
+        table_txt += f"All Rank Num: {sum(submit_count.values()) // 4}\n\n"
 
         for r, sv in enumerate(submit_rating_vec):
             sv.insert(0, r + 1)
-        table_txt += show_table(submit_rating_vec, list(range(len(submit_rating_vec[0]))),
+        show_submit_rating_vec = []
+        for v in submit_rating_vec:
+            if "gobigger." not in v[1]:
+                show_submit_rating_vec.append(v)
+        table_txt += show_table(show_submit_rating_vec, list(range(len(submit_rating_vec[0]))),
                                 ["rank", "submit", "score", "sigma", "pk_num"])
+        table_txt += "\n\n"
+        all_txt = show_table(submit_rating_vec, list(range(len(submit_rating_vec[0]))),
+                             ["rank", "submit", "score", "sigma", "pk_num"])
+        table_txt += f"""<details>\n<summary>全部</summary>\n\n{all_txt}\n</details>"""
         if len(args.save_result) > 0:
             with open(args.save_result, "w") as f:
                 f.write(table_txt)
-    logging.info(f"rank cost: {int(1000 * (time.time() - start_time))}ms\n{p_str}\n")
+            p_str = ""
+    logging.info(f"rank cost: {int(1000 * (time.time() - start_time))}ms\n{p_str}")
 
 
 def save_rank(submit_rating, json_files_set):
@@ -348,7 +362,8 @@ def save_rank(submit_rating, json_files_set):
 
 def main(args=get_args()):
     submits = find_submit(Path(args.submit_folder))
-    logging.info(f"submits: {json.dumps(submits, indent=4)}")
+    # logging.info(f"submits: {json.dumps(submits, indent=4)}")
+    logging.info(f"submits num: {len(submits)}")
     if len(submits) == 0:
         return
 
