@@ -51,6 +51,7 @@ jobs:
         with:
           path: rank.tmp
           key: ${{ runner.os }}-rank-tmp-${{ secrets.RANK_VERSION }}
+          restore-keys: ${{ runner.os }}-rank-tmp-${{ secrets.RANK_VERSION }}
 
       - name: Run Battle
         run: |

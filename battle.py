@@ -376,6 +376,8 @@ def main(args=get_args()):
     rank_tmp_path = Path("rank.tmp")
     if rank_tmp_path.exists():
         submit_rating, json_files_set = pickle.load(rank_tmp_path.open("rb"))
+        logging.info(f"submit_rating num: {len(submit_rating)}")
+        logging.info(f"json_files_set num: {len(json_files_set)}")
 
     env = trueskill.TrueSkill(mu=1000)
     for submit in submits:
