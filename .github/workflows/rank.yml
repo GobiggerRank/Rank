@@ -50,7 +50,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: rank.tmp
-          key: ${{ runner.os }}-rank-tmp-${{ secrets.RANK_VERSION }}
+          key: ${{ runner.os }}-rank-tmp-${{ secrets.RANK_VERSION }}-${{ hashFiles('result/**') }}
           restore-keys: ${{ runner.os }}-rank-tmp-${{ secrets.RANK_VERSION }}
 
       - name: Run Battle
