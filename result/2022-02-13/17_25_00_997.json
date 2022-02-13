@@ -1,0 +1,562 @@
+[
+    {
+        "seed": 35681229,
+        "submits": [
+            "GoBiggerSubmit.submit.jsonzb.test.submission_level_4",
+            "GoBiggerSubmit.submit.gobigger.level_1.submission_level_1_12",
+            "GoBiggerSubmit.submit.gobigger.random.submission_random_22",
+            "GoBiggerSubmit.submit.gobigger.level_3.submission_level_3_46"
+        ],
+        "ranks": [
+            0,
+            3,
+            2,
+            1
+        ],
+        "scores": [
+            41503.84028584282,
+            2461.864198280717,
+            6203.641980529103,
+            28463.892515790318
+        ],
+        "time_actions": [
+            10.808682918548584,
+            4.715579509735107,
+            0.05854320526123047,
+            6.823592185974121
+        ],
+        "time_cost": 39.31981158256531
+    },
+    {
+        "seed": 72302109,
+        "submits": [
+            "GoBiggerSubmit.submit.gobigger.level_1.submission_level_1_41",
+            "GoBiggerSubmit.submit.gobigger.level_3.submission_level_3_48",
+            "GoBiggerSubmit.submit.gobigger.random.submission_random_42",
+            "GoBiggerSubmit.submit.gobigger.level_3.submission_level_3_2"
+        ],
+        "ranks": [
+            3,
+            0,
+            2,
+            1
+        ],
+        "scores": [
+            1444.6014878550272,
+            37020.322795947155,
+            3045.154641289493,
+            35201.89391789898
+        ],
+        "time_actions": [
+            5.952226161956787,
+            6.514746189117432,
+            0.04811239242553711,
+            7.590390920639038
+        ],
+        "time_cost": 34.07502269744873
+    },
+    {
+        "seed": 89485189,
+        "submits": [
+            "GoBiggerSubmit.submit.gobigger.level_2.submission_level_2_24",
+            "GoBiggerSubmit.submit.gobigger.level_1.submission_level_1_13",
+            "GoBiggerSubmit.submit.gobigger.random.submission_random_3",
+            "GoBiggerSubmit.submit.gobigger.level_3.submission_level_3_22"
+        ],
+        "ranks": [
+            2,
+            1,
+            3,
+            0
+        ],
+        "scores": [
+            5070.5967033653715,
+            22719.747081316833,
+            813.737589344983,
+            33917.70058641199
+        ],
+        "time_actions": [
+            0.8734209537506104,
+            8.463689804077148,
+            0.06836438179016113,
+            5.971543550491333
+        ],
+        "time_cost": 32.107067823410034
+    },
+    {
+        "seed": 85139066,
+        "submits": [
+            "GoBiggerSubmit.submit.gobigger.random.submission_random_35",
+            "GoBiggerSubmit.submit.gobigger.level_2.submission_level_2_15",
+            "GoBiggerSubmit.submit.gobigger.level_1.submission_level_1_29",
+            "GoBiggerSubmit.submit.gobigger.level_2.submission_level_2_49"
+        ],
+        "ranks": [
+            2,
+            3,
+            0,
+            1
+        ],
+        "scores": [
+            1699.08519550323,
+            30.987006173147897,
+            46972.609218650825,
+            10283.247051080813
+        ],
+        "time_actions": [
+            0.07671809196472168,
+            0.6290931701660156,
+            14.697964668273926,
+            0.8070788383483887
+        ],
+        "time_cost": 33.975770235061646
+    },
+    {
+        "seed": 89829974,
+        "submits": [
+            "GoBiggerSubmit.submit.gobigger.level_3.submission_level_3_22",
+            "GoBiggerSubmit.submit.gobigger.level_3.submission_level_3_12",
+            "GoBiggerSubmit.submit.gobigger.random.submission_random_1",
+            "GoBiggerSubmit.submit.gobigger.level_1.submission_level_1_36"
+        ],
+        "ranks": [
+            1,
+            0,
+            3,
+            2
+        ],
+        "scores": [
+            26991.119159372996,
+            31781.827442339225,
+            6432.280313839059,
+            9299.293605957671
+        ],
+        "time_actions": [
+            6.055778503417969,
+            5.140164136886597,
+            0.056298255920410156,
+            5.1985437870025635
+        ],
+        "time_cost": 30.827848196029663
+    },
+    {
+        "seed": 80841182,
+        "submits": [
+            "GoBiggerSubmit.submit.gobigger.random.submission_random_33",
+            "GoBiggerSubmit.submit.gobigger.level_3.submission_level_3_36",
+            "GoBiggerSubmit.submit.gobigger.level_3.submission_level_3_12",
+            "GoBiggerSubmit.submit.gobigger.level_1.submission_level_1_27"
+        ],
+        "ranks": [
+            3,
+            1,
+            0,
+            2
+        ],
+        "scores": [
+            59.723548908397206,
+            32495.200728137395,
+            34389.46618288769,
+            13503.350071866818
+        ],
+        "time_actions": [
+            0.05164527893066406,
+            6.736518383026123,
+            5.041480779647827,
+            5.661324739456177
+        ],
+        "time_cost": 30.212425708770752
+    },
+    {
+        "seed": 65023151,
+        "submits": [
+            "GoBiggerSubmit.submit.gobigger.random.submission_random_47",
+            "GoBiggerSubmit.submit.gobigger.random.submission_random_42",
+            "GoBiggerSubmit.submit.gobigger.level_3.submission_level_3_30",
+            "GoBiggerSubmit.submit.gobigger.random.submission_random_29"
+        ],
+        "ranks": [
+            3,
+            1,
+            0,
+            2
+        ],
+        "scores": [
+            799.4898148448469,
+            3461.9183340414593,
+            38513.91626979709,
+            2398.7743251076886
+        ],
+        "time_actions": [
+            0.04441547393798828,
+            0.021128177642822266,
+            10.085745334625244,
+            0.025417804718017578
+        ],
+        "time_cost": 36.73260164260864
+    },
+    {
+        "seed": 82628136,
+        "submits": [
+            "GoBiggerSubmit.submit.gobigger.random.submission_random_41",
+            "GoBiggerSubmit.submit.gobigger.level_2.submission_level_2_3",
+            "GoBiggerSubmit.submit.gobigger.level_2.submission_level_2_11",
+            "GoBiggerSubmit.submit.gobigger.none.submission_none_0"
+        ],
+        "ranks": [
+            1,
+            2,
+            0,
+            3
+        ],
+        "scores": [
+            2524.5489368429107,
+            62.72730296786138,
+            6468.568705034309,
+            27.0
+        ],
+        "time_actions": [
+            0.04059553146362305,
+            0.6348578929901123,
+            0.46526074409484863,
+            0.005193948745727539
+        ],
+        "time_cost": 17.529051065444946
+    },
+    {
+        "seed": 57111114,
+        "submits": [
+            "GoBiggerSubmit.submit.gobigger.random.submission_random_13",
+            "GoBiggerSubmit.submit.gobigger.level_3.submission_level_3_45",
+            "GoBiggerSubmit.submit.gobigger.random.submission_random_38",
+            "GoBiggerSubmit.submit.gobigger.level_1.submission_level_1_15"
+        ],
+        "ranks": [
+            2,
+            0,
+            3,
+            1
+        ],
+        "scores": [
+            9547.063196727295,
+            20431.59410916747,
+            3787.1438770243594,
+            14220.036440661044
+        ],
+        "time_actions": [
+            0.09183478355407715,
+            5.063275337219238,
+            0.034593820571899414,
+            5.316497325897217
+        ],
+        "time_cost": 29.008533239364624
+    },
+    {
+        "seed": 70635483,
+        "submits": [
+            "GoBiggerSubmit.submit.gobigger.level_3.submission_level_3_35",
+            "GoBiggerSubmit.submit.gobigger.level_3.submission_level_3_30",
+            "GoBiggerSubmit.submit.gobigger.level_2.submission_level_2_28",
+            "GoBiggerSubmit.submit.gobigger.random.submission_random_0"
+        ],
+        "ranks": [
+            1,
+            0,
+            3,
+            2
+        ],
+        "scores": [
+            20566.774326633542,
+            36457.449803958705,
+            46.13026313820994,
+            4635.716203925903
+        ],
+        "time_actions": [
+            5.63389778137207,
+            6.927450895309448,
+            0.6022937297821045,
+            0.03550887107849121
+        ],
+        "time_cost": 32.17302703857422
+    },
+    {
+        "seed": 88462245,
+        "submits": [
+            "GoBiggerSubmit.submit.gobigger.random.submission_random_34",
+            "GoBiggerSubmit.submit.gobigger.level_1.submission_level_1_26",
+            "GoBiggerSubmit.submit.gobigger.level_1.submission_level_1_12",
+            "GoBiggerSubmit.submit.gobigger.level_3.submission_level_3_17"
+        ],
+        "ranks": [
+            3,
+            2,
+            1,
+            0
+        ],
+        "scores": [
+            46.67332729394157,
+            15533.414866523388,
+            32239.63302991124,
+            39138.77398618027
+        ],
+        "time_actions": [
+            0.02719855308532715,
+            6.459956645965576,
+            7.665319204330444,
+            6.04345965385437
+        ],
+        "time_cost": 31.526500701904297
+    },
+    {
+        "seed": 80125262,
+        "submits": [
+            "GoBiggerSubmit.submit.gobigger.random.submission_random_15",
+            "GoBiggerSubmit.submit.gobigger.level_2.submission_level_2_41",
+            "GoBiggerSubmit.submit.gobigger.level_2.submission_level_2_5",
+            "GoBiggerSubmit.submit.gobigger.level_2.submission_level_2_47"
+        ],
+        "ranks": [
+            1,
+            3,
+            2,
+            0
+        ],
+        "scores": [
+            4044.124093398903,
+            54.897479392570034,
+            110.31484509112786,
+            10721.136653324273
+        ],
+        "time_actions": [
+            0.061530351638793945,
+            0.4686274528503418,
+            0.5430464744567871,
+            0.3916800022125244
+        ],
+        "time_cost": 16.630401134490967
+    },
+    {
+        "seed": 79629192,
+        "submits": [
+            "GoBiggerSubmit.submit.gobigger.random.submission_random_34",
+            "GoBiggerSubmit.submit.gobigger.level_3.submission_level_3_47",
+            "GoBiggerSubmit.submit.gobigger.level_1.submission_level_1_20",
+            "GoBiggerSubmit.submit.gobigger.random.submission_random_2"
+        ],
+        "ranks": [
+            3,
+            0,
+            1,
+            2
+        ],
+        "scores": [
+            186.98047869765693,
+            41120.60884824406,
+            21584.026291718328,
+            9391.508444190986
+        ],
+        "time_actions": [
+            0.0666508674621582,
+            6.579985618591309,
+            8.72160029411316,
+            0.03491067886352539
+        ],
+        "time_cost": 30.565326929092407
+    },
+    {
+        "seed": 1549870,
+        "submits": [
+            "GoBiggerSubmit.submit.gobigger.level_3.submission_level_3_21",
+            "GoBiggerSubmit.submit.gobigger.level_2.submission_level_2_7",
+            "GoBiggerSubmit.submit.gobigger.random.submission_random_38",
+            "GoBiggerSubmit.submit.gobigger.level_1.submission_level_1_19"
+        ],
+        "ranks": [
+            0,
+            3,
+            2,
+            1
+        ],
+        "scores": [
+            34161.41168248298,
+            146.06311843594676,
+            6329.751202253592,
+            23017.808491304873
+        ],
+        "time_actions": [
+            6.45850682258606,
+            0.7057814598083496,
+            0.02292776107788086,
+            10.331472635269165
+        ],
+        "time_cost": 37.8290069103241
+    },
+    {
+        "seed": 80417092,
+        "submits": [
+            "GoBiggerSubmit.submit.gobigger.level_1.submission_level_1_10",
+            "GoBiggerSubmit.submit.gobigger.random.submission_random_10",
+            "GoBiggerSubmit.submit.gobigger.level_2.submission_level_2_8",
+            "GoBiggerSubmit.submit.gobigger.random.submission_random_3"
+        ],
+        "ranks": [
+            0,
+            1,
+            3,
+            2
+        ],
+        "scores": [
+            34281.297544274064,
+            12276.281744129334,
+            60.95450817740809,
+            8790.816416631727
+        ],
+        "time_actions": [
+            12.71309518814087,
+            0.048764944076538086,
+            0.7240476608276367,
+            0.028934001922607422
+        ],
+        "time_cost": 33.34193682670593
+    },
+    {
+        "seed": 97935263,
+        "submits": [
+            "GoBiggerSubmit.submit.gobigger.level_3.submission_level_3_30",
+            "GoBiggerSubmit.submit.gobigger.level_3.submission_level_3_4",
+            "GoBiggerSubmit.submit.gobigger.random.submission_random_25",
+            "GoBiggerSubmit.submit.gobigger.random.submission_random_15"
+        ],
+        "ranks": [
+            1,
+            0,
+            2,
+            3
+        ],
+        "scores": [
+            30111.902111639283,
+            30762.93007309911,
+            8030.73441606643,
+            4354.281328947309
+        ],
+        "time_actions": [
+            9.241440057754517,
+            8.628638505935669,
+            0.02800464630126953,
+            0.023637771606445312
+        ],
+        "time_cost": 39.75425481796265
+    },
+    {
+        "seed": 84743816,
+        "submits": [
+            "GoBiggerSubmit.submit.gobigger.random.submission_random_24",
+            "GoBiggerSubmit.submit.gobigger.level_1.submission_level_1_28",
+            "GoBiggerSubmit.submit.gobigger.level_3.submission_level_3_46",
+            "GoBiggerSubmit.submit.gobigger.random.submission_random_28"
+        ],
+        "ranks": [
+            2,
+            1,
+            0,
+            3
+        ],
+        "scores": [
+            193.49031783007462,
+            22705.82138310559,
+            40138.69651185999,
+            189.9897755798868
+        ],
+        "time_actions": [
+            0.0718686580657959,
+            5.516316652297974,
+            7.941707372665405,
+            0.025968074798583984
+        ],
+        "time_cost": 31.325719594955444
+    },
+    {
+        "seed": 89776258,
+        "submits": [
+            "GoBiggerSubmit.submit.gobigger.level_3.submission_level_3_28",
+            "GoBiggerSubmit.submit.gobigger.level_2.submission_level_2_12",
+            "GoBiggerSubmit.submit.gobigger.level_3.submission_level_3_20",
+            "GoBiggerSubmit.submit.gobigger.level_2.submission_level_2_22"
+        ],
+        "ranks": [
+            0,
+            2,
+            1,
+            3
+        ],
+        "scores": [
+            44952.70539768455,
+            5375.717623133677,
+            24868.423685790734,
+            124.16440801283863
+        ],
+        "time_actions": [
+            6.859832286834717,
+            0.6269476413726807,
+            5.167134523391724,
+            0.6114747524261475
+        ],
+        "time_cost": 29.77873682975769
+    },
+    {
+        "seed": 21901089,
+        "submits": [
+            "GoBiggerSubmit.submit.gobigger.level_2.submission_level_2_40",
+            "GoBiggerSubmit.submit.gobigger.random.submission_random_41",
+            "GoBiggerSubmit.submit.gobigger.random.submission_random_12",
+            "GoBiggerSubmit.submit.gobigger.level_1.submission_level_1_41"
+        ],
+        "ranks": [
+            3,
+            2,
+            1,
+            0
+        ],
+        "scores": [
+            104.04805354218811,
+            1663.3439295514968,
+            3110.886324374307,
+            38869.421085828144
+        ],
+        "time_actions": [
+            0.8522288799285889,
+            0.0283510684967041,
+            0.019191503524780273,
+            10.65443730354309
+        ],
+        "time_cost": 33.84952521324158
+    },
+    {
+        "seed": 67032585,
+        "submits": [
+            "GoBiggerSubmit.submit.gobigger.level_3.submission_level_3_17",
+            "GoBiggerSubmit.submit.gobigger.level_3.submission_level_3_46",
+            "GoBiggerSubmit.submit.gobigger.level_1.submission_level_1_41",
+            "GoBiggerSubmit.submit.gobigger.level_2.submission_level_2_36"
+        ],
+        "ranks": [
+            2,
+            0,
+            1,
+            3
+        ],
+        "scores": [
+            20087.1807462201,
+            42795.377380440885,
+            21819.87362343098,
+            27.0
+        ],
+        "time_actions": [
+            5.115483283996582,
+            4.213369607925415,
+            5.444333076477051,
+            0.5626492500305176
+        ],
+        "time_cost": 25.840269804000854
+    }
+]
